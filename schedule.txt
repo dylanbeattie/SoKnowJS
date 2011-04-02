@@ -1,0 +1,14 @@
+18:30	Start, intro, about me - 5 minutes
+18:35	Name That Language - 8 slides @ 30 seconds each => 4 minutes
+18:40	into Javascript History
+19:00 	The Good Parts
+19:15	The Bad Parts
+19:25	Knockout
+19:30	Mustache
+19:35	Manifests
+19:40	NodeJS and Sockets
+19:45	NodeChat
+19:50	Bomberman
+
+
+
