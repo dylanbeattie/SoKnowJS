@@ -1,0 +1,3 @@
+[submodule "BomberJS"]
+	path = BomberJS
+	url = git@github.com:dylanbeattie/BomberJS.git

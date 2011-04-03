@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Knockout : Home</title>
+        <link href="css/tripoli.simple.css" type="text/css" rel="stylesheet" /> 
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="css/smallScreen.css" media="only screen and (max-device-width: 800px)" />
+        <!--[if IE]><link rel="stylesheet" type="text/css" href="css/tripoli.simple.ie.css" /><![endif]-->
+        <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="css/ie6ie7.css" /><![endif]-->
+        <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="css/ie6.css" /><![endif]-->
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.tmpl.js"></script>
+<script type="text/javascript" src="js/knockout-1.1.2.js"></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/titilliummaps.font.js"></script>
+<script type="text/javascript" src="js/json2.js"></script>
+
+<!--[if lt IE 7]>
+<script defer type="text/javascript" src="js/ie6pngfix.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shCore.js"></script> 
+<script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script> 
+<script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script> 
+<link type="text/css" rel="stylesheet" href="js/syntaxhighlighter_3.0.83/styles/shThemeFadeToGrey.css"/>  
+
+<script type="text/javascript">
+    $(function() {
+        // Fancy fonts
+        Cufon.replace('.titillium');
+        Cufon.replace('.engraved', {
+            textShadow: 'rgba(253, 224, 217, 0.45) 1.2px 1px'	
+        });
+        
+        // Syntax highlighting
+        $("pre > code").each(function() {
+            var codeText = $(this).text();
+            $(this).parent().text(codeText).addClass("brush:js");
+        });
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.all();
+        
+        // Highlight current top menu item
+        var desiredMenuItem = '' || 'home';
+        $(".main-menu a[rel=" + desiredMenuItem + "]").addClass("active");
+        
+        // Highlight current left-hand-nav menu item
+        var urlFilename = location.href.match(/\/([^\/]+)$/);
+        if (urlFilename) {
+            $(".leftColContents li:has(a[href$=" + urlFilename[1] + "])").addClass("active");
+        }
+    });
+</script> 
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="vspace"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="index.html">Home</a></li>
+        <li><a rel="installation" href="documentation/installation.html">Download / Install</a></li>
+        <li><a rel="examples" href="examples/">Live examples</a></li>
+        <li><a rel="documentation" href="documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+            <div class="vspace"></div>
+            <div id="masthead">
+    <div id="slogan">
+        <p class="engraved">Simplify dynamic JavaScript UIs by applying the Model-View-View Model (MVVM) pattern</p>
+        <a class="download-button" href="http://github.com/downloads/SteveSanderson/knockout/knockout-1.1.2.js">
+            <p>Download</p>
+            <p class="smallprint">v1.1.2 - 25kb minified</p>
+        </a>
+    </div>
+    <img src="img/ko-logo.png" />
+</div>
+<div class="clear vspace"></div>
+
+<div class="sticker fullWidth">
+    <div class="stickerHeading titillium">
+        <h1>Key concepts</h1>
+    </div>
+    <ul id="introBadges">
+        <li>
+            <img src="img/feature-icons/declarative-bindings.png" />					
+            <p class="titillium heading">Declarative Bindings</p>
+            <p>Easily associate DOM elements with model data using a concise, readable syntax</p>						
+        </li>					
+        <li>
+            <img src="img/feature-icons/automatic-refreshing.png" />					
+            <p class="titillium heading">Automatic UI Refresh</p>
+            <p>When your data model's state changes, your UI updates automatically</p>						
+        </li>
+        <li>
+            <img src="img/feature-icons/dependency-tracking.png" />					
+            <p class="titillium heading">Dependency Tracking</p>
+            <p>Implicitly set up chains of relationships between model data, to transform and combine it</p>
+        </li>
+        <li>
+            <img src="img/feature-icons/templating.png" />					
+            <p class="titillium heading">Templating</p>
+            <p>Quickly generate sophisticated, nested UIs as a function of your model data</p>						
+        </li>					
+    </ul>
+    <div class="clear"></div>
+</div>
+
+<div class="floatLeft">
+	<div class="sticker" style="width: 380px">
+	    <div class="stickerHeading titillium">
+	        <h1>More features</h1>
+	    </div>
+	    <ul class="tickIcons">
+	        <li>Free, open source (<a href="http://www.opensource.org/licenses/ms-pl.html">Ms-PL</a>)</li>
+	        <li>Pure JavaScript &mdash; works with any web framework</li>
+	        <li>
+	        	Small & lightweight &mdash; 25kb minified
+	        	<p class="smallprint">... in fact, under 10kb when using HTTP compression</p>
+			</li>
+	        <li>
+	            Supports all mainstream browsers
+	            <p class="smallprint">IE 6 - 9, Firefox 2+, Chrome, Opera, Safari (Win/Mac/iPhone)</p>
+	        </li>
+	        <li>
+	            Use your choice of template engine
+	            <p class="smallprint">Works with the jquery.tmpl template engine, or others</p>
+	        </li>
+	        <li>Fully documented</li>
+	    </ul>
+    </div>
+    
+	<div class="sticker" style="width: 380px">
+	    <div class="stickerHeading titillium">
+	        <h1>Get started</h1>
+	    </div>
+	    <ul class="stickerList">
+	        <li>
+	        	<a href="documentation/introduction.html">Introduction to Knockout</a>
+	        	<p class="smallprint">Tutorial, benefits, comparisons with other frameworks</p>
+        	</li>
+        	<li>
+        		<a href="documentation/observables.html#mvvm_and_view_models">Introduction to the Model-View-View Model pattern</a>
+        		<p class="smallprint">How KO enables it with observables and dependent observables</p>
+        	</li>
+        	<li>
+        		<a href="examples/">More live examples</a>
+        	</li>           	
+        	<li>
+        		<a href="documentation/links.html">External links and blog posts</a>
+        	</li>        	
+	        <li>
+	        	<a href="http://github.com/SteveSanderson/knockout/">Source code on Github</a>
+        	</li>
+	    </ul>
+    </div>    
+</div>	
+		
+<div class="sticker floatRight homepageExample" style="width:494px">
+    <div class="stickerHeading titillium">
+        <h1>Live example</h1>
+    </div>
+    <h2>Run it:</h2>
+<div class="liveExample">
+	<p>
+    Choose a ticket class:
+    <select data-bind="options: tickets, 
+                       optionsCaption: 'Choose...',
+                       optionsText: 'name',
+                       value: chosenTicket"></select>
+	</p>
+    <p data-bind="template: 'ticketTemplate'"></p>
+        
+    <script id="ticketTemplate" type="text/x-jquery-tmpl">
+        {{if chosenTicket}}
+            You have chosen <b>${ chosenTicket().name }</b>
+            ($${ chosenTicket().price })
+            <button data-bind="click: resetTicket">Clear</button>
+        {{/if}}
+    </script>
+    
+    <script type="text/javascript">
+        var viewModel = {
+            tickets: [
+                { name: "Economy", price: 199.95 },
+                { name: "Business", price: 449.22 },
+                { name: "First Class", price: 1199.99 }
+            ],
+            chosenTicket: ko.observable(),
+            resetTicket: function() { this.chosenTicket(null) }
+        };
+        ko.applyBindings(viewModel);
+    </script>	
+</div>
+
+<h2>Source code:</h2>
+<img src="img/homepage-example.png" />
+    <p>By encapsulating data and behavior into a view model, you get a clean, extensible foundation on which to build sophisticated UIs without getting lost in a tangle of event handlers and manual DOM updates.</p>
+</div>		
+
+            <div class="clear"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="index.html">Home</a></li>
+        <li><a rel="installation" href="documentation/installation.html">Download / Install</a></li>
+        <li><a rel="examples" href="examples/">Live examples</a></li>
+        <li><a rel="documentation" href="documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+        </div>
+        
+        <div id="page-footer">(c) knockoutjs.com</div> 
+        
+        <script type="text/javascript">               
+            // Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-65756-7']);
+            _gaq.push(['_trackPageview']);	
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();             
+        </script>
+    </body>
+</html>

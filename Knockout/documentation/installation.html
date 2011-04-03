@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Knockout : Installation</title>
+        <link href="../css/tripoli.simple.css" type="text/css" rel="stylesheet" /> 
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="../css/smallScreen.css" media="only screen and (max-device-width: 800px)" />
+        <!--[if IE]><link rel="stylesheet" type="text/css" href="../css/tripoli.simple.ie.css" /><![endif]-->
+        <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="../css/ie6ie7.css" /><![endif]-->
+        <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="../css/ie6.css" /><![endif]-->
+        <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.tmpl.js"></script>
+<script type="text/javascript" src="../js/knockout-1.1.2.js"></script>
+<script type="text/javascript" src="../js/cufon-yui.js"></script>
+<script type="text/javascript" src="../js/titilliummaps.font.js"></script>
+<script type="text/javascript" src="../js/json2.js"></script>
+
+<!--[if lt IE 7]>
+<script defer type="text/javascript" src="../js/ie6pngfix.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shCore.js"></script> 
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script> 
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script> 
+<link type="text/css" rel="stylesheet" href="../js/syntaxhighlighter_3.0.83/styles/shThemeFadeToGrey.css"/>  
+
+<script type="text/javascript">
+    $(function() {
+        // Fancy fonts
+        Cufon.replace('.titillium');
+        Cufon.replace('.engraved', {
+            textShadow: 'rgba(253, 224, 217, 0.45) 1.2px 1px'	
+        });
+        
+        // Syntax highlighting
+        $("pre > code").each(function() {
+            var codeText = $(this).text();
+            $(this).parent().text(codeText).addClass("brush:js");
+        });
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.all();
+        
+        // Highlight current top menu item
+        var desiredMenuItem = 'installation' || 'documentation';
+        $(".main-menu a[rel=" + desiredMenuItem + "]").addClass("active");
+        
+        // Highlight current left-hand-nav menu item
+        var urlFilename = location.href.match(/\/([^\/]+)$/);
+        if (urlFilename) {
+            $(".leftColContents li:has(a[href$=" + urlFilename[1] + "])").addClass("active");
+        }
+    });
+</script> 
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="vspace"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="../index.html">Home</a></li>
+        <li><a rel="installation" href="../documentation/installation.html">Download / Install</a></li>
+        <li><a rel="examples" href="../examples/">Live examples</a></li>
+        <li><a rel="documentation" href="../documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+            <div class="vspace"></div>
+            <div>	
+	<div class="leftCol">		
+		<div class="leftColBackground">&nbsp;</div>
+		<div class="leftColContents">
+			<h1>Getting started</h1>
+
+<ol>
+    <li><a href="introduction.html">How KO works and what benefits it brings</a></li>
+    <li><a href="installation.html"><em>Downloading</em> and <em>installing</em></li>
+    <li><a href="observables.html">Creating <em>view models</em>, <em>observables</em>, and <em>dependent observables</em></a></li>
+    <li><a href="observableArrays.html">Working with <em>observable arrays</em></a></li>	
+</ol>
+
+<h1>Using built-in bindings</h1>
+
+<h2>Controlling text and appearance</h2>
+<ol>
+    <li><a href="visible-binding.html">The <code>visible</code> binding</a></li>
+    <li><a href="text-binding.html">The <code>text</code> binding</a></li>
+    <li><a href="css-binding.html">The <code>css</code> binding</a></li>
+    <li><a href="style-binding.html">The <code>style</code> binding</a></li>
+</ol>
+
+<h2>Working with form fields</h2>
+<ol>
+    <li><a href="click-binding.html">The <code>click</code> binding</a></li>
+    <li><a href="submit-binding.html">The <code>submit</code> binding</a></li>
+    <li><a href="enable-binding.html">The <code>enable</code> binding</a></li>
+    <li><a href="disable-binding.html">The <code>disable</code> binding</a></li>
+    <li><a href="value-binding.html">The <code>value</code> binding</a></li>
+    <li><a href="checked-binding.html">The <code>checked</code> binding</a></li>
+    <li><a href="options-binding.html">The <code>options</code> binding</a></li>
+    <li><a href="selectedOptions-binding.html">The <code>selectedOptions</code> binding</a></li>
+    <li><a href="uniqueName-binding.html">The <code>uniqueName</code> binding</a></li>		
+</ol>
+
+<h2>Rendering templates</h2>
+<ol>
+    <li><a href="template-binding.html">The <code>template</code> binding</a></li>
+</ol>
+
+<h2>Advanced techniques</h2>
+<ol>
+    <li><a href="custom-bindings.html">Creating custom bindings</a></li>
+</ol>
+
+<h2>Plugins</h2>
+<ol>
+	<li><a href="plugins.mapping.html">The <code>mapping</code> plugin</a></li>
+</ol>
+
+<h1>More information</h1>
+<ol>
+    <li><a href="browser-support.html">Browser support</a></li>
+    <li><a href="http://groups.google.com/group/knockoutjs">Getting help</a></li>
+    <li><a href="links.html">Links to tutorials &amp; examples</a></li>
+</ol>
+		</div>		
+	</div>
+	<div class="rightCol">
+		<div class="sticker">
+		    <div class="content">
+		    	<h1>Installation</h1>	
+		    	<p>Knockout&#8217;s core library is pure JavaScript and doesn&#8217;t depend on any other libraries. So, to add KO to your project, just follow these steps:</p>
+
+<ol>
+<li>
+<p><strong>Download</strong> the latest version of the Knockout JavaScript file from <a href='http://github.com/SteveSanderson/knockout/downloads'>the downloads page</a>. For normal development and production use, use the default, minified version (<code>knockout-x.x.js</code>).</p>
+
+<p><em>For debugging only, use the larger, non-minified version (<code>knockout-x.x.debug.js</code>). This behaves the same as the minified version, but has human-readable source code with full variable names and comments, and does not hide internal APIs.</em></p>
+</li>
+
+<li>
+<p>Reference the file using a <code>&lt;script&gt;</code> tag somewhere on your HTML pages</p>
+</li>
+</ol>
+
+<p>That&#8217;s all you have to do&#8230;</p>
+
+<h3 id='enabling_templating'>Enabling templating</h3>
+
+<p>&#8230;except if you also want to use the templating feature (you probably do because it&#8217;s very useful), in which case you need two more JavaScript files. KO&#8217;s default templating engine is <code>jquery.tmpl.js</code>, which depends on jQuery. So, download the following script files and place <code>&lt;script&gt;</code> tags referencing them <strong>above your reference to KO itself</strong>:</p>
+
+<ul>
+<li>jQuery 1.4.2 or later from <a href='http://docs.jquery.com/Downloading_jQuery'>the jQuery site</a>, if you&#8217;re not already using it</li>
+
+<li><code>jquery-tmpl.js</code> &#8212; <a href='http://github.com/downloads/SteveSanderson/knockout/jquery.tmpl.js'>this version</a> works nicely, or you can check <a href='http://github.com/jquery/jquery-tmpl'>jquery.tmpl&#8217;s project homepage</a> to look for a newer version.</li>
+</ul>
+
+<p>In case it&#8217;s unclear, you&#8217;ll end up with three script tags like the following, in this order:</p>
+
+<pre><code>&lt;script type=&#39;text/javascript&#39; src=&#39;jquery-1.4.2.min.js&#39;&gt;&lt;/script&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;jquery-tmpl.js&#39;&gt;&lt;/script&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;knockout-1.1.2.js&#39;&gt;&lt;/script&gt;</code></pre>
+
+<p>(Obviously, update the filenames/paths to match where you put the files.)</p>
+
+<p>Next, learn about <a href='observables.html'>observables</a>, read <a href='introduction.html'>a tutorial</a>, or see <a href='../examples/'>some examples</a>.</p>    
+		    </div>
+		    
+		    <div class="clear"></div>
+		</div>
+	</div>	
+</div>
+            <div class="clear"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="../index.html">Home</a></li>
+        <li><a rel="installation" href="../documentation/installation.html">Download / Install</a></li>
+        <li><a rel="examples" href="../examples/">Live examples</a></li>
+        <li><a rel="documentation" href="../documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+        </div>
+        
+        <div id="page-footer">(c) knockoutjs.com</div> 
+        
+        <script type="text/javascript">               
+            // Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-65756-7']);
+            _gaq.push(['_trackPageview']);	
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();             
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="C1CCA0AB-614B-4A5D-AA80-1F8E1CBFBD4E/f:index.html" caret="125" fromTop="5" />
+      <File id="D5064A09-E655-4B55-B14C-5DA820AF1057/f:node-http-server.js" caret="543" fromTop="7" />
+      <File id="D5064A09-E655-4B55-B14C-5DA820AF1057/d:Runabout/f:index.html" caret="0" fromTop="0" />
+      <File id="D5064A09-E655-4B55-B14C-5DA820AF1057/d:Runabout/f:runabout.js" caret="0" fromTop="0" />
+      <File id="D5064A09-E655-4B55-B14C-5DA820AF1057/d:Runabout/f:runabout.css" caret="0" fromTop="0" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="D5064A09-E655-4B55-B14C-5DA820AF1057/f:node-http-server.js" caret="1502" fromTop="14" />
+      <File id="D5064A09-E655-4B55-B14C-5DA820AF1057/f:node-http-server.js" caret="503" fromTop="17" />
+      <File id="D5064A09-E655-4B55-B14C-5DA820AF1057/f:node-http-server.js" caret="191" fromTop="10" />
+      <File id="D5064A09-E655-4B55-B14C-5DA820AF1057/f:node-http-server.js" caret="368" fromTop="16" />
+      <File id="D5064A09-E655-4B55-B14C-5DA820AF1057/f:node-http-server.js" caret="1326" fromTop="29" />
+      <File id="D5064A09-E655-4B55-B14C-5DA820AF1057/d:Runabout/f:runabout.css" caret="0" fromTop="0" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.8\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

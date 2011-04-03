@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BomberJS", "BomberJS\", "{C1CCA0AB-614B-4A5D-AA80-1F8E1CBFBD4E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/BomberJS"
+		Debug.AspNetCompiler.PhysicalPath = "BomberJS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\BomberJS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/BomberJS"
+		Release.AspNetCompiler.PhysicalPath = "BomberJS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\BomberJS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50159"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Knockout", "Knockout\", "{FF5D4FB9-DDF9-422F-B18D-61C71D08427C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Knockout"
+		Debug.AspNetCompiler.PhysicalPath = "Knockout\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Knockout\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Knockout"
+		Release.AspNetCompiler.PhysicalPath = "Knockout\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Knockout\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50164"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Manifest", "Manifest\", "{D5064A09-E655-4B55-B14C-5DA820AF1057}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Manifest"
+		Debug.AspNetCompiler.PhysicalPath = "Manifest\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Manifest\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Manifest"
+		Release.AspNetCompiler.PhysicalPath = "Manifest\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Manifest\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50453"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1CCA0AB-614B-4A5D-AA80-1F8E1CBFBD4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1CCA0AB-614B-4A5D-AA80-1F8E1CBFBD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5D4FB9-DDF9-422F-B18D-61C71D08427C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5D4FB9-DDF9-422F-B18D-61C71D08427C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5064A09-E655-4B55-B14C-5DA820AF1057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5064A09-E655-4B55-B14C-5DA820AF1057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

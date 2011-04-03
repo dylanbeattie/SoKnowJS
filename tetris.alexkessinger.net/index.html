@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html manifest="tetris.manifest">
+<head>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="iphon_tetris_icon.png"/>
+    <link rel="apple-touch-startup-image" href="startup.png" />
+    <link rel="stylesheet" href="tetris.css" type="text/css" media="screen, mobile" title="main" charset="utf-8">
+    <title>offline Tetris</title>
+</head>
+
+<body>
+
+<div id="tetris">
+    <div id="ownz">
+        <div style="text-align:left;width:155px;float:left;margin-left:5px;">App by <a href="http://twitter.com/voidfiles">@voidfiles</a></div><div style="text-align:right;white-space:nowrap;width:155px;margin-right:5px;float:left;">JS by <a href="http://www.daltonridenhour.com">Dalton Ridenhour</a></div>
+    </div>
+<!-- <div id="board" style="float: right; border: 1px solid black;">Board<br /></div> -->
+    <div class="game_area">
+        <div id="canvas"></div>
+    </div>
+    <div id="info">
+        <div id="next_shape">asdfasdf</div>
+        <p id="level">Level: <span></span></p>
+        <p id="lines">Lines: <span></span></p>
+        <p id="score">Score: <span></span></p>
+        <p id="time">Time: <span></span></p>
+    </div>
+
+</div>
+<div id="controls" class="show_controls">
+    <div class="control move_left"><div class="for_help move_left"><span>L</span></div></div>
+    <div class="control move_right"><div class="for_help move_right"><span>R</span></div></div>
+    <div class="control move_rotate"><div class="for_help move_rotate"><span>Rotate</span></div></div>
+    <div class="control move_down"><div class="for_help move_down"><span>down</span></div></div>
+    <div class="control move_pause"><div class="move_pause"><span>Pause</span></div></div>
+    <div class="control move_show_controls"><div class="move_show_controls"><span>Show Control</span></div></div>
+</div>
+<script type="text/javascript" src="tetris.js"></script>
+</body>
+</html>

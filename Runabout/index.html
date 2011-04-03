@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<!-- This doesn't match documentation spec - you don't specify the .manifest extension... -->
+<html lang="en" man  ifest="/runabout.manifest">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Cartman Simulator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+	<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-startup-image" href="img/startup.png" />
+	
+	
+	<link rel="stylesheet" href="/css/runabout.css" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+</head>
+<body>
+	<div id="canvas">
+		<div id="sprite">
+		</div>
+	</div>
+	<div id="azButtons">
+		<button id="aButton" rel="a" />
+		<button id="zButton" rel="z" />
+	</div>
+	<div id="keypad">
+		<button id="uButton" rel="moveUp" />
+		<button id="urButton" rel="moveUpRight" />
+		<button id="rButton" rel="moveRight" />
+		<button id="drButton" rel="moveDownRight" />
+		<button id="dButton" rel="moveDown" />
+		<button id="dlButton" rel="moveDownLeft" />
+		<button id="lButton" rel="moveLeft" />
+		<button id="ulButton" rel="moveUpLeft" />
+	</div>
+</body>
+
+
+<script type="text/javascript" src="/js/jquery-1.5.1.min.js"></script>
+
+<script type="text/javascript" src="/js/runabout.js"></script>
+
+</html>

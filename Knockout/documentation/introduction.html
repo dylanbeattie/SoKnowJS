@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Knockout : Introduction</title>
+        <link href="../css/tripoli.simple.css" type="text/css" rel="stylesheet" /> 
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="../css/smallScreen.css" media="only screen and (max-device-width: 800px)" />
+        <!--[if IE]><link rel="stylesheet" type="text/css" href="../css/tripoli.simple.ie.css" /><![endif]-->
+        <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="../css/ie6ie7.css" /><![endif]-->
+        <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="../css/ie6.css" /><![endif]-->
+        <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.tmpl.js"></script>
+<script type="text/javascript" src="../js/knockout-1.1.2.js"></script>
+<script type="text/javascript" src="../js/cufon-yui.js"></script>
+<script type="text/javascript" src="../js/titilliummaps.font.js"></script>
+<script type="text/javascript" src="../js/json2.js"></script>
+
+<!--[if lt IE 7]>
+<script defer type="text/javascript" src="../js/ie6pngfix.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shCore.js"></script> 
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script> 
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script> 
+<link type="text/css" rel="stylesheet" href="../js/syntaxhighlighter_3.0.83/styles/shThemeFadeToGrey.css"/>  
+
+<script type="text/javascript">
+    $(function() {
+        // Fancy fonts
+        Cufon.replace('.titillium');
+        Cufon.replace('.engraved', {
+            textShadow: 'rgba(253, 224, 217, 0.45) 1.2px 1px'	
+        });
+        
+        // Syntax highlighting
+        $("pre > code").each(function() {
+            var codeText = $(this).text();
+            $(this).parent().text(codeText).addClass("brush:js");
+        });
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.all();
+        
+        // Highlight current top menu item
+        var desiredMenuItem = '' || 'documentation';
+        $(".main-menu a[rel=" + desiredMenuItem + "]").addClass("active");
+        
+        // Highlight current left-hand-nav menu item
+        var urlFilename = location.href.match(/\/([^\/]+)$/);
+        if (urlFilename) {
+            $(".leftColContents li:has(a[href$=" + urlFilename[1] + "])").addClass("active");
+        }
+    });
+</script> 
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="vspace"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="../index.html">Home</a></li>
+        <li><a rel="installation" href="../documentation/installation.html">Download / Install</a></li>
+        <li><a rel="examples" href="../examples/">Live examples</a></li>
+        <li><a rel="documentation" href="../documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+            <div class="vspace"></div>
+            <div>	
+	<div class="leftCol">		
+		<div class="leftColBackground">&nbsp;</div>
+		<div class="leftColContents">
+			<h1>Getting started</h1>
+
+<ol>
+    <li><a href="introduction.html">How KO works and what benefits it brings</a></li>
+    <li><a href="installation.html"><em>Downloading</em> and <em>installing</em></li>
+    <li><a href="observables.html">Creating <em>view models</em>, <em>observables</em>, and <em>dependent observables</em></a></li>
+    <li><a href="observableArrays.html">Working with <em>observable arrays</em></a></li>	
+</ol>
+
+<h1>Using built-in bindings</h1>
+
+<h2>Controlling text and appearance</h2>
+<ol>
+    <li><a href="visible-binding.html">The <code>visible</code> binding</a></li>
+    <li><a href="text-binding.html">The <code>text</code> binding</a></li>
+    <li><a href="css-binding.html">The <code>css</code> binding</a></li>
+    <li><a href="style-binding.html">The <code>style</code> binding</a></li>
+</ol>
+
+<h2>Working with form fields</h2>
+<ol>
+    <li><a href="click-binding.html">The <code>click</code> binding</a></li>
+    <li><a href="submit-binding.html">The <code>submit</code> binding</a></li>
+    <li><a href="enable-binding.html">The <code>enable</code> binding</a></li>
+    <li><a href="disable-binding.html">The <code>disable</code> binding</a></li>
+    <li><a href="value-binding.html">The <code>value</code> binding</a></li>
+    <li><a href="checked-binding.html">The <code>checked</code> binding</a></li>
+    <li><a href="options-binding.html">The <code>options</code> binding</a></li>
+    <li><a href="selectedOptions-binding.html">The <code>selectedOptions</code> binding</a></li>
+    <li><a href="uniqueName-binding.html">The <code>uniqueName</code> binding</a></li>		
+</ol>
+
+<h2>Rendering templates</h2>
+<ol>
+    <li><a href="template-binding.html">The <code>template</code> binding</a></li>
+</ol>
+
+<h2>Advanced techniques</h2>
+<ol>
+    <li><a href="custom-bindings.html">Creating custom bindings</a></li>
+</ol>
+
+<h2>Plugins</h2>
+<ol>
+	<li><a href="plugins.mapping.html">The <code>mapping</code> plugin</a></li>
+</ol>
+
+<h1>More information</h1>
+<ol>
+    <li><a href="browser-support.html">Browser support</a></li>
+    <li><a href="http://groups.google.com/group/knockoutjs">Getting help</a></li>
+    <li><a href="links.html">Links to tutorials &amp; examples</a></li>
+</ol>
+		</div>		
+	</div>
+	<div class="rightCol">
+		<div class="sticker">
+		    <div class="content">
+		    	<h1>Introduction</h1>	
+		    	<p>Knockout is a JavaScript library that helps you to create rich, responsive display and editor user interfaces with a clean underlying data model. Any time you have sections of UI that update dynamically (e.g., changing depending on the user&#8217;s actions or when an external data source changes), KO can help you implement it more simply and maintainably.</p>
+
+<p>Headline features:</p>
+
+<ul>
+<li><strong>Elegant dependency tracking</strong> - automatically updates the right parts of your UI whenever your data model changes</li>
+
+<li><strong>Declarative bindings</strong> - a simple and obvious way to connect parts of your UI to your data model</li>
+
+<li><strong>Flexible and sophisticated templating</strong> - construct a complex dynamic UI easily using arbitrarily nested templates</li>
+
+<li><strong>Trivially extensible</strong> - implement custom behaviors as new declarative bindings for easy reuse in just a few lines of code</li>
+</ul>
+
+<p>Additional benefits:</p>
+
+<ul>
+<li><strong>Pure JavaScript library</strong> - works with any server or client-side technology</li>
+
+<li><strong>Can be added on top of your existing web application</strong> without requiring major architectural changes</li>
+
+<li><strong>Compact</strong> - around 25kb <em>before</em> gzipping</li>
+
+<li><strong>Works on any mainstream browser</strong> (IE 6+, Firefox 2+, Chrome, Safari, others)</li>
+
+<li><strong>Comprehensive suite of specifications</strong> (developed BDD-style) means its correct functioning can easily be verified on new browsers and platforms</li>
+</ul>
+
+<p>Developers who&#8217;ve used Silverlight or WPF may recognize KO as an example of the MVVM pattern; developers more familiar with Ruby on Rails or other MVC technologies may see it as a real-time form of MVC with declarative syntax. In another sense, you can think of KO as a general way to make UIs for editing JSON data&#8230; whatever works for you :)</p>
+
+<h2 id='ok_how_do_you_use_it'>OK, how do you use it?</h2>
+
+<p>In short: define your data as a JavaScript model object, and then bind DOM elements and/or templates to it.</p>
+
+<h3 id='lets_see_an_example'>Let&#8217;s see an example</h3>
+
+<p>Consider a screen on which airline passengers can choose to purchase premium meal upgrades for their flight. We want to let them choose a meal, then dynamically show its description and price. First let&#8217;s declare the available meals:</p>
+
+<pre><code>var availableMeals = [        	
+	{ mealName: &#39;Standard&#39;, description: &#39;Dry crusts of bread&#39;, extraCost: 0 },
+	{ mealName: &#39;Premium&#39;, description: &#39;Fresh bread with cheese&#39;, extraCost: 9.95 },
+	{ mealName: &#39;Deluxe&#39;, description: &#39;Caviar and vintage Dr Pepper&#39;, extraCost: 18.50 }
+];</code></pre>
+
+<p>If we want to display these options in the UI, we can bind a drop-down list (i.e., an HTML <code>&lt;select&gt;</code> element) to it. For example,</p>
+
+<pre><code>&lt;h3&gt;Meal upgrades&lt;/h3&gt;
+&lt;p&gt;Make your flight more bearable by selecting a meal to match your social and economic status.&lt;/p&gt;
+Chosen meal: &lt;select data-bind=&quot;options: availableMeals, 
+							    optionsText: &#39;mealName&#39;&quot;&gt;&lt;/select&gt;</code></pre>
+
+<p>To activate Knockout and bring your bindings to life, add the following lines right after your declaration of <code>availableMeals</code>:</p>
+
+<pre><code>var viewModel = {
+	/* we&#39;ll populate this in a moment */
+};
+ko.applyBindings(viewModel); // Makes Knockout get to work</code></pre>
+
+<p>You can learn more about view models and MVVM <a href='observables.html'>here</a>. But now, your page will render as follows:</p>
+
+<p><img src='images/introduction/working-dropdown.png' alt='' /></p>
+
+<h3 id='responding_to_selections'>Responding to selections</h3>
+
+<p>Next, define a simple data model to describe which item they&#8217;ve chosen. Add a property to your existing view model as follows:</p>
+
+<pre><code>var viewModel = { 
+	chosenMeal: ko.observable(availableMeals[0])
+};</code></pre>
+
+<p>Huh? What&#8217;s <code>ko.observable</code>? It&#8217;s a fundamental concept in KO. It&#8217;s value that the UI can &#8216;observe&#8217; and respond to changes on. Here, we&#8217;re saying that the UI can observe a value representing the chosen meal, and that initially, it&#8217;s set to the first <code>availableMeal</code> entry (i.e., the &#8216;Standard&#8217; meal).</p>
+
+<p>Let&#8217;s link <code>chosenMeal</code> to the drop-down list in the UI. Just update the <code>data-bind</code> attribute on the <code>&lt;select&gt;</code> element to say the element&#8217;s <code>value</code> should read and write the <code>chosenMeal</code> model property:</p>
+
+<pre><code>Chosen meal: &lt;select data-bind=&quot;options: availableMeals, 
+						    	optionsText: &#39;mealName&#39;,
+						    	value: chosenMeal&quot;&gt;&lt;/select&gt;</code></pre>
+
+<p>Technically that&#8217;s now reading and writing the <code>chosenMeal</code> property, but we can&#8217;t see it doing anything until we add more UI. Let&#8217;s display the description and price of the chosen meal:</p>
+
+<pre><code>&lt;p&gt;
+	You&#39;ve chosen: 
+	&lt;b data-bind=&quot;text: chosenMeal().description&quot;&gt;&lt;/b&gt;
+	(price: &lt;span data-bind=&#39;text: chosenMeal().extraCost&#39;&gt;&lt;/span&gt;)
+&lt;/p&gt;</code></pre>
+
+<p>This bit of the UI will now update dynamically as the user chooses different items from the drop-down list:</p>
+
+<p><img src='images/introduction/info-about-chosen-meal.png' alt='' /></p>
+
+<h3 id='more_about_observables_and_dependency_tracking'>More about observables and dependency tracking</h3>
+
+<p>One last thing: it would be nicer to format the price as a currency value. Just define a JavaScript function to do that&#8230;</p>
+
+<pre><code>function formatPrice(price) {
+	return price == 0 ? &quot;Free&quot; : &quot;$&quot; + price.toFixed(2);
+}</code></pre>
+
+<p>&#8230; and then update the binding to use it &#8230;</p>
+
+<pre><code>(price: &lt;span data-bind=&#39;text: formatPrice(chosenMeal().extraCost)&#39;&gt;&lt;/span&gt;)</code></pre>
+
+<p>&#8230; and our UI will be a little prettier:</p>
+
+<p><img src='images/introduction/formatting-price.png' alt='' /></p>
+
+<p>The price formatting shows that you can write arbitrary JavaScript in your bindings, and KO is still able to detect what observables your bindings depend on. That&#8217;s how it knows what parts of the UI to update when your model changes. It doesn&#8217;t re-render the entire UI all the time - just the parts whose dependencies have changed.</p>
+
+<p>It&#8217;s possible to create nested chains of observables computed from other observables (e.g., a total value defined as a sum of prices multiplied by a quantities). When anything in the chain changes, the dependencies further down from there are re-evaluated, and all associated UI updated. You don&#8217;t have to declare associations between observables explicitly; the framework infers them from the code execution at runtime.</p>
+
+<p>You can learn more about <a href='observables.html'>observables</a> and <a href='observableArrays.html'>observable arrays</a>. The previous example was simple and didn&#8217;t cover a lot of what makes KO effective. You can learn more about other built-in bindings and <a href='template-binding.html'>templating</a>.</p>
+
+<h2 id='is_ko_intended_to_compete_with_jquery_or_prototype_etc_or_work_with_it'>Is KO intended to compete with jQuery (or Prototype, etc.) or work with it?</h2>
+
+<p>Everyone loves jQuery! It&#8217;s an outstanding replacement for the clunky, inconsistent DOM API we had to put up with in the past. jQuery is an excellent low-level way to manipulate elements and event handlers in a web page. I certainly still use jQuery for low-level DOM manipulation. KO solves a different problem.</p>
+
+<p>As soon as your UI gets nontrivial and has a few overlapping behaviors, things can get tricky and expensive to maintain if you only use jQuery. Consider an example: you&#8217;re displaying a list of items, stating the number of items in that list, and want to enable an &#8216;Add&#8217; button only when there are fewer than 5 items. jQuery doesn&#8217;t have a concept of an underlying data model, so to get the number of items you have to infer it from the number of TRs in a table or the number of DIVs with a certain CSS class. Maybe the number of items is displayed in some SPAN, and you have to remember to update that SPAN&#8217;s text when the user adds an item. You also must remember to disable the &#8216;Add&#8217; button when the number of TRs is 5. Later, you&#8217;re asked also to implement a &#8216;Delete&#8217; button and you have to figure out which DOM elements to change whenever it&#8217;s clicked.</p>
+
+<h3 id='how_is_knockout_different'>How is Knockout different?</h3>
+
+<p>It&#8217;s much easier with KO. It lets you scale up in complexity without fear of introducing inconsistencies. Just represent your items as a JavaScript array, and then use a template to transform this array into a TABLE or set of DIVs. Whenever the array changes, the UI changes to match (you don&#8217;t have to figure out how to inject new TRs or where to inject them). The rest of the UI stays in sync. For example, you can declaratively bind a SPAN to display the number of items as follows (and this can go anywhere in your page, not just in a template):</p>
+
+<pre><code>There are &lt;span data-bind=&quot;text: myItems().count&quot;&gt;&lt;/span&gt; items</code></pre>
+
+<p>That&#8217;s it! You don&#8217;t have to write code to update it; it updates on its own when the <code>myItems</code> array changes. Similarly, to make the &#8216;Add&#8217; button enable or disable depending on the number of items, just write:</p>
+
+<pre><code>&lt;button data-bind=&quot;enable: myItems().count &lt; 5&quot;&gt;Add&lt;/button&gt;</code></pre>
+
+<p>Later, when you&#8217;re asked to implement the &#8216;Delete&#8217; functionality, you don&#8217;t have to figure out what bits of the UI it has to interact with; you just make it alter the underlying data model.</p>
+
+<p>To summarise: KO doesn&#8217;t compete with jQuery or similar DOM APIs. KO provides an alternative, high-level way to link a data model to a UI. KO itself doesn&#8217;t depend on jQuery, but you can certainly use jQuery at the same time, and indeed that&#8217;s often useful if you want things like animated transitions.</p>    
+		    </div>
+		    
+		    <div class="clear"></div>
+		</div>
+	</div>	
+</div>
+            <div class="clear"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="../index.html">Home</a></li>
+        <li><a rel="installation" href="../documentation/installation.html">Download / Install</a></li>
+        <li><a rel="examples" href="../examples/">Live examples</a></li>
+        <li><a rel="documentation" href="../documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+        </div>
+        
+        <div id="page-footer">(c) knockoutjs.com</div> 
+        
+        <script type="text/javascript">               
+            // Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-65756-7']);
+            _gaq.push(['_trackPageview']);	
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();             
+        </script>
+    </body>
+</html>

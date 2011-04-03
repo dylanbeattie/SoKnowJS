@@ -1,0 +1,447 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Knockout : Twitter client example</title>
+        <link href="../css/tripoli.simple.css" type="text/css" rel="stylesheet" /> 
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="../css/smallScreen.css" media="only screen and (max-device-width: 800px)" />
+        <!--[if IE]><link rel="stylesheet" type="text/css" href="../css/tripoli.simple.ie.css" /><![endif]-->
+        <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="../css/ie6ie7.css" /><![endif]-->
+        <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="../css/ie6.css" /><![endif]-->
+        <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.tmpl.js"></script>
+<script type="text/javascript" src="../js/knockout-1.1.2.js"></script>
+<script type="text/javascript" src="../js/cufon-yui.js"></script>
+<script type="text/javascript" src="../js/titilliummaps.font.js"></script>
+<script type="text/javascript" src="../js/json2.js"></script>
+
+<!--[if lt IE 7]>
+<script defer type="text/javascript" src="../js/ie6pngfix.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shCore.js"></script> 
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script> 
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script> 
+<link type="text/css" rel="stylesheet" href="../js/syntaxhighlighter_3.0.83/styles/shThemeFadeToGrey.css"/>  
+
+<script type="text/javascript">
+    $(function() {
+        // Fancy fonts
+        Cufon.replace('.titillium');
+        Cufon.replace('.engraved', {
+            textShadow: 'rgba(253, 224, 217, 0.45) 1.2px 1px'	
+        });
+        
+        // Syntax highlighting
+        $("pre > code").each(function() {
+            var codeText = $(this).text();
+            $(this).parent().text(codeText).addClass("brush:js");
+        });
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.all();
+        
+        // Highlight current top menu item
+        var desiredMenuItem = '' || 'examples';
+        $(".main-menu a[rel=" + desiredMenuItem + "]").addClass("active");
+        
+        // Highlight current left-hand-nav menu item
+        var urlFilename = location.href.match(/\/([^\/]+)$/);
+        if (urlFilename) {
+            $(".leftColContents li:has(a[href$=" + urlFilename[1] + "])").addClass("active");
+        }
+    });
+</script> 
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="vspace"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="../index.html">Home</a></li>
+        <li><a rel="installation" href="../documentation/installation.html">Download / Install</a></li>
+        <li><a rel="examples" href="../examples/">Live examples</a></li>
+        <li><a rel="documentation" href="../documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+            <div class="vspace"></div>
+            <div>	
+	<div class="leftCol">		
+		<div class="leftColBackground">&nbsp;</div>
+		<div class="leftColContents">
+			<h1>Introductory examples</h1>
+<ul>
+    <li>
+        <strong><a href="helloWorld.html">Hello world</a></strong>
+        <small>Working with <code>ko.observable</code> &amp; <code>ko.dependentObservable</code></small>
+    </li>
+    <li>
+        <strong><a href="clickCounter.html">Click counter</a></strong>
+        <small>Using declarative bindings and how KO tracks dependencies automatically</small>
+    </li>
+    <li>
+        <strong><a href="simpleList.html">Simple list</a></strong>
+        <small>Working with <code>ko.observableArray</code></small>
+    </li>
+    <li>
+        <strong><a href="betterList.html">Better list</a></strong>
+        <small>Combining more behaviors</small>
+    </li>
+    <li>
+        <strong><a href="controlTypes.html">Control types</a></strong>
+        <small>Reference: All HTML control types</small>
+    </li>
+    <li>
+        <strong><a href="templating.html">Templating</a></strong>
+        <small>Rendering templates, including nested ones</small>
+    </li>
+    <li>
+        <strong><a href="grid.html">Paged grid</a></strong>
+        <small>Creating reusable components, i.e., plugins</small>
+    </li>
+    <li>
+        <strong><a href="animatedTransitions.html">Animated transitions</a></strong>
+        <small>Two simple ways to implement animated transitions (one of which is a custom binding)</small>
+    </li>
+</ul>
+
+<h1>Detailed examples</h1>
+<ul>
+    <li>
+        <strong><a href="contactsEditor.html">Contacts editor</a></strong>
+        <small>Editing a nested list</small>
+    </li>
+    <li>
+        <strong><a href="gridEditor.html">Editable grid</a></strong>
+        <small>Using the 'foreach' binding and integrating with jQuery Validation</small>
+    </li>
+    <li>
+        <strong><a href="cartEditor.html">Shopping cart screen</a></strong>
+        <small>Includes nested dropdowns and a string formatting function</small>
+    </li>
+    <li>
+        <strong><a href="twitter.html">Twitter client</a></strong>
+        <small>Combines templating, declarative bindings, and Ajax</small>
+    </li>
+</ul>
+		</div>		
+	</div>
+	<div class="rightCol">
+		<div class="sticker">
+		    <div class="content">
+		    	<h1>Twitter client example</h1>	
+		    	<p>This is a sophisticated example showing how many different features in Knockout can be combined to make a rich user interface.</p>
+
+<ul>
+<li>The user data is stored as a JavaScript model and rendered via templates. This means we can cleanly retain information about which Twitter users are in each of the user lists without having to hide it in the DOM anywhere.</li>
+
+<li>Buttons become enabled and disabled according to whether they are applicable. For example, we have a <code>dependentObservable</code> called <code>hasUnsavedChanges</code> that controls whether the &#8220;Save&#8221; button is enabled.</li>
+
+<li>It&#8217;s convenient to pull in data from external JSON services and integrate it into the view model, at which point it becomes displayed on screen.</li>
+</ul>
+<link href='resources/twitterExample.css' rel='Stylesheet' /><script src='resources/twitterApi.js' type='text/javascript'> </script><style type='text/css'>
+   .liveExample select { height: 1.7em; }
+   .liveExample button { height: 2em; }
+</style><h2>Live example</h2><div class='liveExample'>
+
+<div class='loadingIndicator'>Loading...</div>
+<div class='configuration'>
+    <div class='listChooser'>
+        <button data-bind='click: deleteList, enable: editingList.name'>Delete</button>
+        <button data-bind='click: saveChanges, enable: hasUnsavedChanges'>Save</button>
+        <select data-bind='options: savedLists, optionsValue: "name", value: editingList.name'> </select>
+    </div>
+
+    <p>Currently viewing <span data-bind='text: editingList.userNames().length'>&nbsp;</span> user(s):</p>
+    <div class='currentUsers' data-bind='template: { name: "usersTemplate", data: editingList }'> </div>
+    
+    <form data-bind='submit: addUser'>
+        <label>Add user:</label>
+        <input data-bind='value: userNameToAdd, valueUpdate: "keyup", css: { invalid: !userNameToAddIsValid() }' />
+        <button data-bind='enable: userNameToAddIsValid() && userNameToAdd() != ""' type='submit'>Add</button>
+    </form>
+</div>
+<div class='tweets' data-bind='template: { name: "tweetsTemplate", data: currentTweets }'> </div>
+
+<script id='tweetsTemplate' type='text/html'>
+    <table width='100%'>
+        {{each $data}}
+            <tr>
+                <td><img src='${ profile_image_url }' /></td>
+                <td>
+                    <a href='http://twitter.com/${ from_user }' class='twitterUser'>${ from_user }</a>
+                    ${ text }
+                    <div class='tweetInfo'>${ created_at }</div>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+</script>
+
+<script id='usersTemplate' type='text/html'>
+    <ul>
+        {{each(i, userName) userNames()}}
+            <li><button data-bind='click: function() { userNames.remove(userName) }'>Remove</button> <div>${ userName }</div></li>
+        {{/each}}
+    </ul>
+</script>
+
+
+<script type='text/javascript'>
+/*<![CDATA[*/
+    // The view model holds all the state we're working with. It also has methods that can edit it, and it uses
+    // dependentObservables to compute more state in terms of the underlying data
+    // --
+    // The view (i.e., the HTML UI) binds to this using data-bind attributes, so it always stays up-to-date with
+    // the view model, even though the view model does not know or care about any view that binds to it
+
+    var viewModel = {
+        savedLists: ko.observableArray([
+            { name: "Celebrities", userNames: ['JohnCleese', 'MCHammer', 'StephenFry', 'algore', 'StevenSanderson'] },
+            { name: "Microsoft people", userNames: ['BillGates', 'shanselman', 'haacked', 'ScottGu'] },
+            { name: "Tech pundits", userNames: ['Scobleizer', 'LeoLaporte', 'techcrunch', 'BoingBoing', 'timoreilly', 'codinghorror'] }
+        ]),
+        editingList: {
+            name: ko.observable("Tech pundits"),
+            userNames: ko.observableArray()
+        },
+        userNameToAdd : ko.observable(""),
+        currentTweets : ko.observableArray([])
+    };
+
+    viewModel.findSavedList = function (name) {
+        var lists = this.savedLists();
+        for (var i = 0; i < lists.length; i++)
+            if (lists[i].name === name)
+                return lists[i];
+    };
+
+    // Methods
+    viewModel.addUser = function () {
+        if (this.userNameToAdd() && this.userNameToAddIsValid()) {
+            this.editingList.userNames.push(this.userNameToAdd());
+            this.userNameToAdd("");
+        }
+    }
+    viewModel.saveChanges = function () {
+        var saveAs = prompt("Save as", this.editingList.name());
+        if (saveAs) {
+            var dataToSave = this.editingList.userNames().slice(0);
+            var existingSavedList = this.findSavedList(saveAs);
+            if (existingSavedList)
+                existingSavedList.userNames = dataToSave; // Overwrite existing list
+            else
+                this.savedLists.push({ name: saveAs, userNames: dataToSave }); // Add new list
+            this.editingList.name(saveAs);
+        }
+    }
+    viewModel.deleteList = function () {
+        var nameToDelete = this.editingList.name();
+        var savedListsExceptOneToDelete = $.grep(this.savedLists(), function (list) { return list.name != nameToDelete });
+        this.editingList.name(savedListsExceptOneToDelete.length == 0 ? null : savedListsExceptOneToDelete[0].name);
+        this.savedLists(savedListsExceptOneToDelete);
+    };
+
+    ko.dependentObservable(function () {
+        // Observe viewModel.editingList.name(), so when it changes (i.e., user selects a different list) we know to copy the saved list into the editing list
+        var savedList = viewModel.findSavedList(viewModel.editingList.name());
+        if (savedList) {
+            var userNamesCopy = savedList.userNames.slice(0);
+            viewModel.editingList.userNames(userNamesCopy);
+        } else
+            viewModel.editingList.userNames([]);
+    });
+
+    viewModel.hasUnsavedChanges = ko.dependentObservable(function () {
+        if (!this.editingList.name())
+            return this.editingList.userNames().length > 0;
+        var savedData = this.findSavedList(this.editingList.name()).userNames;
+        var editingData = this.editingList.userNames();
+        return savedData.join("|") != editingData.join("|");
+    }, viewModel);
+
+    viewModel.userNameToAddIsValid = ko.dependentObservable(function () {
+        return (this.userNameToAdd() == "") || (this.userNameToAdd().match(/^\s*[a-zA-Z0-9_]{1,15}\s*$/) != null);
+    }, viewModel);
+
+    // The active user tweets are (asynchronously) computed from editingList.userNames
+    ko.dependentObservable(function () {
+        twitterApi.getTweetsForUsers(this.editingList.userNames(), function (data) { viewModel.currentTweets(data) })
+    }, viewModel);
+
+    ko.applyBindings(viewModel);
+
+	// Using jQuery for Ajax loading indicator - nothing to do with Knockout
+    $(".loadingIndicator").ajaxStart(function () { $(this).fadeIn(); })      
+                          .ajaxComplete(function () { $(this).fadeOut(); }); 
+/*]]>*/
+</script>
+</div><h2>Source code: View</h2><pre class='brush:html'>
+&lt;div class=&quot;loadingIndicator&quot;&gt;Loading...&lt;/div&gt;
+&lt;div class=&quot;configuration&quot;&gt;
+    &lt;div class=&quot;listChooser&quot;&gt;
+        &lt;button data-bind='click: deleteList, enable: editingList.name'&gt;Delete&lt;/button&gt;
+        &lt;button data-bind='click: saveChanges, enable: hasUnsavedChanges'&gt;Save&lt;/button&gt;
+        &lt;select data-bind='options: savedLists, optionsValue: &quot;name&quot;, value: editingList.name'&gt; &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Currently viewing &lt;span data-bind=&quot;text: editingList.userNames().length&quot;&gt;&amp;nbsp;&lt;/span&gt; user(s):&lt;/p&gt;
+    &lt;div class=&quot;currentUsers&quot; data-bind='template: { name: &quot;usersTemplate&quot;, data: editingList }'&gt; &lt;/div&gt;
+    
+    &lt;form data-bind=&quot;submit: addUser&quot;&gt;
+        &lt;label&gt;Add user:&lt;/label&gt;
+        &lt;input data-bind='value: userNameToAdd, valueUpdate: &quot;keyup&quot;, css: { invalid: !userNameToAddIsValid() }' /&gt;
+        &lt;button type=&quot;submit&quot; data-bind='enable: userNameToAddIsValid() &amp;&amp; userNameToAdd() != &quot;&quot;'&gt;Add&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+&lt;div class=&quot;tweets&quot; data-bind='template: { name: &quot;tweetsTemplate&quot;, data: currentTweets }'&gt; &lt;/div&gt;
+
+&lt;script type=&quot;text/html&quot; id=&quot;tweetsTemplate&quot;&gt;
+    &lt;table width=&quot;100%&quot;&gt;
+        {{each $data}}
+            &lt;tr&gt;
+                &lt;td&gt;&lt;img src=&quot;${ profile_image_url }&quot;/&gt;&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;a class=&quot;twitterUser&quot; href=&quot;http://twitter.com/${ from_user }&quot;&gt;${ from_user }&lt;/a&gt;
+                    ${ text }
+                    &lt;div class=&quot;tweetInfo&quot;&gt;${ created_at }&lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        {{/each}}
+    &lt;/table&gt;
+&lt;/script&gt;
+
+&lt;script type=&quot;text/html&quot; id=&quot;usersTemplate&quot;&gt;
+    &lt;ul&gt;
+        {{each(i, userName) userNames()}}
+            &lt;li&gt;&lt;button data-bind=&quot;click: function() { userNames.remove(userName) }&quot;&gt;Remove&lt;/button&gt; &lt;div&gt;${ userName }&lt;/div&gt;&lt;/li&gt;
+        {{/each}}
+    &lt;/ul&gt;
+&lt;/script&gt;
+
+</pre><h2>Source code: View model</h2><pre class='brush:js'>
+    // The view model holds all the state we're working with. It also has methods that can edit it, and it uses
+    // dependentObservables to compute more state in terms of the underlying data
+    // --
+    // The view (i.e., the HTML UI) binds to this using data-bind attributes, so it always stays up-to-date with
+    // the view model, even though the view model does not know or care about any view that binds to it
+
+    var viewModel = {
+        savedLists: ko.observableArray([
+            { name: &quot;Celebrities&quot;, userNames: ['JohnCleese', 'MCHammer', 'StephenFry', 'algore', 'StevenSanderson'] },
+            { name: &quot;Microsoft people&quot;, userNames: ['BillGates', 'shanselman', 'haacked', 'ScottGu'] },
+            { name: &quot;Tech pundits&quot;, userNames: ['Scobleizer', 'LeoLaporte', 'techcrunch', 'BoingBoing', 'timoreilly', 'codinghorror'] }
+        ]),
+        editingList: {
+            name: ko.observable(&quot;Tech pundits&quot;),
+            userNames: ko.observableArray()
+        },
+        userNameToAdd : ko.observable(&quot;&quot;),
+        currentTweets : ko.observableArray([])
+    };
+
+    viewModel.findSavedList = function (name) {
+        var lists = this.savedLists();
+        for (var i = 0; i &lt; lists.length; i++)
+            if (lists[i].name === name)
+                return lists[i];
+    };
+
+    // Methods
+    viewModel.addUser = function () {
+        if (this.userNameToAdd() &amp;&amp; this.userNameToAddIsValid()) {
+            this.editingList.userNames.push(this.userNameToAdd());
+            this.userNameToAdd(&quot;&quot;);
+        }
+    }
+    viewModel.saveChanges = function () {
+        var saveAs = prompt(&quot;Save as&quot;, this.editingList.name());
+        if (saveAs) {
+            var dataToSave = this.editingList.userNames().slice(0);
+            var existingSavedList = this.findSavedList(saveAs);
+            if (existingSavedList)
+                existingSavedList.userNames = dataToSave; // Overwrite existing list
+            else
+                this.savedLists.push({ name: saveAs, userNames: dataToSave }); // Add new list
+            this.editingList.name(saveAs);
+        }
+    }
+    viewModel.deleteList = function () {
+        var nameToDelete = this.editingList.name();
+        var savedListsExceptOneToDelete = $.grep(this.savedLists(), function (list) { return list.name != nameToDelete });
+        this.editingList.name(savedListsExceptOneToDelete.length == 0 ? null : savedListsExceptOneToDelete[0].name);
+        this.savedLists(savedListsExceptOneToDelete);
+    };
+
+    ko.dependentObservable(function () {
+        // Observe viewModel.editingList.name(), so when it changes (i.e., user selects a different list) we know to copy the saved list into the editing list
+        var savedList = viewModel.findSavedList(viewModel.editingList.name());
+        if (savedList) {
+            var userNamesCopy = savedList.userNames.slice(0);
+            viewModel.editingList.userNames(userNamesCopy);
+        } else
+            viewModel.editingList.userNames([]);
+    });
+
+    viewModel.hasUnsavedChanges = ko.dependentObservable(function () {
+        if (!this.editingList.name())
+            return this.editingList.userNames().length &gt; 0;
+        var savedData = this.findSavedList(this.editingList.name()).userNames;
+        var editingData = this.editingList.userNames();
+        return savedData.join(&quot;|&quot;) != editingData.join(&quot;|&quot;);
+    }, viewModel);
+
+    viewModel.userNameToAddIsValid = ko.dependentObservable(function () {
+        return (this.userNameToAdd() == &quot;&quot;) || (this.userNameToAdd().match(/^\s*[a-zA-Z0-9_]{1,15}\s*$/) != null);
+    }, viewModel);
+
+    // The active user tweets are (asynchronously) computed from editingList.userNames
+    ko.dependentObservable(function () {
+        twitterApi.getTweetsForUsers(this.editingList.userNames(), function (data) { viewModel.currentTweets(data) })
+    }, viewModel);
+
+    ko.applyBindings(viewModel);
+
+	// Using jQuery for Ajax loading indicator - nothing to do with Knockout
+    $(&quot;.loadingIndicator&quot;).ajaxStart(function () { $(this).fadeIn(); })      
+                          .ajaxComplete(function () { $(this).fadeOut(); }); 
+</pre>   		    		    	
+		    </div>
+		    
+		    <div class="clear"></div>
+		</div>
+	</div>	
+</div>
+            <div class="clear"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="../index.html">Home</a></li>
+        <li><a rel="installation" href="../documentation/installation.html">Download / Install</a></li>
+        <li><a rel="examples" href="../examples/">Live examples</a></li>
+        <li><a rel="documentation" href="../documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+        </div>
+        
+        <div id="page-footer">(c) knockoutjs.com</div> 
+        
+        <script type="text/javascript">               
+            // Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-65756-7']);
+            _gaq.push(['_trackPageview']);	
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();             
+        </script>
+    </body>
+</html>
