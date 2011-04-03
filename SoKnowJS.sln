@@ -42,24 +42,44 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Knockout", "Knockout\", "{F
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Manifest", "Manifest\", "{D5064A09-E655-4B55-B14C-5DA820AF1057}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Runabout", "Runabout\", "{142AEF48-6587-445A-B4B7-0C995DD10BD5}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/Manifest"
-		Debug.AspNetCompiler.PhysicalPath = "Manifest\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Manifest\"
+		Debug.AspNetCompiler.VirtualPath = "/Runabout"
+		Debug.AspNetCompiler.PhysicalPath = "Runabout\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Runabout\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/Manifest"
-		Release.AspNetCompiler.PhysicalPath = "Manifest\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Manifest\"
+		Release.AspNetCompiler.VirtualPath = "/Runabout"
+		Release.AspNetCompiler.PhysicalPath = "Runabout\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Runabout\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "50453"
+		VWDPort = "53356"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Tempo", "Tempo\", "{B5313BCB-11A5-4749-A874-67CC09A66DF0}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Tempo"
+		Debug.AspNetCompiler.PhysicalPath = "Tempo\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Tempo\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Tempo"
+		Release.AspNetCompiler.PhysicalPath = "Tempo\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Tempo\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "64330"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
@@ -72,8 +92,10 @@ Global
 		{C1CCA0AB-614B-4A5D-AA80-1F8E1CBFBD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF5D4FB9-DDF9-422F-B18D-61C71D08427C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FF5D4FB9-DDF9-422F-B18D-61C71D08427C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5064A09-E655-4B55-B14C-5DA820AF1057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5064A09-E655-4B55-B14C-5DA820AF1057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{142AEF48-6587-445A-B4B7-0C995DD10BD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{142AEF48-6587-445A-B4B7-0C995DD10BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5313BCB-11A5-4749-A874-67CC09A66DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5313BCB-11A5-4749-A874-67CC09A66DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
