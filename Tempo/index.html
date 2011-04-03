@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<title>Tempo JS</title>
+	<style type="text/css">
+		html { font-family: Trebuchet MS, Verdana, helvetica; font-size: 82.5%; }
+		div.row { clear: left; padding-top: 4px; border-top: 1px solid #000; }
+		div.row img { float: left; margin-right: 8px; }
+		div.row h3 { margin: 2px 0px 0px 0px; padding: 1px; background-color: #ccc; font-size: 1.0em; }
+	</style>
+</head>
+<body>
+	<div id="tweets">
+		<div class="row" data-template style="display: none;">
+			<img src="{{profile_image_url}}" height="48" width="48" />
+			<h3><a href="http://twitter.com/{{from_user}}">{{from_user}}</a></h3>
+			<p>{{text}}</p>
+		</div>
+		<div class="error" data-template-fallback>
+			Sorry, but you sort of need JavaScript for this one!
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+
+<script type="text/javascript" src="tempo/tempo.js"></script>
+
+<script type="text/javascript">
+	$(function () {
+		var twitter = Tempo.prepare('tweets');
+		var search = prompt('Enter search text:', 'skillsmatter');
+		$.getJSON("http://search.twitter.com/search.json?q='" + encodeURIComponent(search) + "'&rpp=50&callback=?", function (data) {
+			twitter.render(data.results);
+		});
+	});
+
+</script>
+
+</html>
