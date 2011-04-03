@@ -26,7 +26,6 @@ KeyCodes.Z = 90;
 
 function Cartman(sprite) {
 
-
 	var speed = 1;
 
 	this.sprite = sprite;
@@ -67,13 +66,6 @@ function Cartman(sprite) {
 		this.updateCss();
 	}
 
-	this.aButton = function () {
-		this.sounds["respect"].play();
-	}
-	this.zButton = function() {
-		this.sounds["kickass"].play();
-	}
-
 	this.updateCss = function () {
 		var frameIndex = 0;
 		switch ((10 * this.velocity.dx) + this.velocity.dy) {
@@ -96,7 +88,6 @@ function Cartman(sprite) {
 		var dx = this.velocity.dx;
 		var dy = this.velocity.dy;
 		if (dx || dy) {
-
 			dx = (isNaN(dx) ? 0 : dx);
 			dy = (isNaN(dy) ? 0 : dy);
 			var actualSpeed = (speed * (dx && dy ? 2 : 3));
@@ -119,7 +110,6 @@ function Simulator(canvas, sprite) {
 
 	this.update = function () {
 		$("#velocityTextBox").val(this.player.velocity.dx + ", " + this.player.velocity.dy);
-
 		$("#positionTextBox").val(this.player.position.top + ", " + this.player.position.left);
 		this.player.update(this.canvas);
 		var offset = { top: this.origin.top + this.player.position.top, left: this.origin.left + this.player.position.left };
@@ -139,7 +129,6 @@ function Simulator(canvas, sprite) {
 	}
 	this.keyup = function (e) {
 		switch (e.which) {
-
 			case KeyCodes.UpArrow:
 			case KeyCodes.DownArrow:
 				this.player.verticalStop.call(this.player);
@@ -200,7 +189,6 @@ function Simulator(canvas, sprite) {
 		this.update();
 	}
 }
-
 
 $(function () {
 	var canvas = $("#canvas");
