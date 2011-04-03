@@ -1,12 +1,9 @@
-﻿html, body { padding: 0px; margin: 0px; overflow: hidden; }
-div#canvas { width: 200px; height: 180px; border: 1px solid #000; position: absolute; top: 0px; left: 0px; }
-div#sprite { width: 32px; height: 32px; padding: 0px; margin: 0px; background: transparent url(/img/cartman.png) no-repeat -32px 0px; position: absolute; top: 0px; left: 0px; }
-div#keypad, div#azButtons { position: absolute;}
+﻿html, body { padding: 0px; margin: 0px; overflow: hidden; background-color: #666; }
+div#canvas { width: 200px; height: 180px; border: 1px solid #000; position: absolute; top: 0px; left: 0px; background-color: #fff; }
+div#sprite { width: 32px; height: 32px; padding: 0px; margin: 0px; background: transparent url(../img/cartman.png) no-repeat -32px 0px; position: absolute; top: 0px; left: 0px; }
+div#keypad, div#azButtons { position: absolute; }
 
-div#keypad button, div#azButtons button { width: 48px; height: 48px; position: absolute;
-background: transparent url(../img/buttons.png) no-repeat 0px 0px;
-border: 0px; padding: 0px;
-}
+div#keypad button, div#azButtons button { width: 48px; height: 48px; position: absolute; background: transparent url(../img/buttons.png) no-repeat 0px 0px; border: 0px; padding: 0px; }
 
 div#keypad button#uButton { top: 0px; left: 50px; background-position: -144px 0px; }
 div#keypad button#dButton { top: 100px; left: 50px; background-position: -96px 0px; }
@@ -15,51 +12,29 @@ div#keypad button#rButton { top: 50px; left: 100px; }
 div#keypad button#urButton { top: 0px; left: 100px; background-position: -192px 0px; }
 div#keypad button#drButton { top: 100px; left: 100px; background-position: -336px 0px; }
 div#keypad button#ulButton { top: 0px; left: 0px; background-position: -240px 0px; }
-div#keypad button#dlButton { top: 100px; left: 0px;  background-position: -288px 0px; }
+div#keypad button#dlButton { top: 100px; left: 0px; background-position: -288px 0px; }
 
-div#azButtons button#aButton {
-	background-position: -384px 0px;
-}
+div#azButtons button#aButton { background-position: -384px 0px; }
 
-div#azButtons button#zButton {
-	background-position: -432px 0px;
-}
+div#azButtons button#zButton { background-position: -432px 0px; }
 
-/* Portrait */
+/* Portrait layout for iPhones */
 @media screen and (max-width: 320px) {
-	div#canvas {
-		left: 59px;
-		top: 8px;
-	}
-	
-	div#keypad {
-		top: 200px;
-		left: 160px;
-	}
-	div#azButtons {
-		top: 200px;
-		left: 8px;
-	}
+	div#canvas { left: 59px; top: 8px; }
+
+	div#keypad { top: 200px; left: 160px; }
+	div#azButtons { top: 200px; left: 8px; }
 
 	div#azButtons button#aButton { top: 24px; left: 8px; }
 	div#azButtons button#zButton { top: 80px; left: 32px; }
 }
-/* landscape */
+/* Landscape layout for iPhones */
 @media screen and (min-width: 321px) {
 
-	div#azButtons {
-		top: 40px;
-		left: 8px;
-	}
+	div#azButtons { top: 40px; left: 8px; }
 	div#azButtons button#aButton { top: 24px; left: 8px; }
 	div#azButtons button#zButton { top: 80px; left: 32px; }
-	
-	div#canvas {
-		left: 100px;
-		top: 12px;
-	}
-	div#keypad {
-		top: 32px;
-		left: 320px;
-	}
+
+	div#canvas { left: 100px; top: 12px; }
+	div#keypad { top: 32px; left: 320px; }
 }

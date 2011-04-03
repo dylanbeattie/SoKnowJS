@@ -26,10 +26,6 @@ KeyCodes.Z = 90;
 
 function Cartman(sprite) {
 
-	this.sounds = {};
-	this.sounds['respect'] = new Audio("/sfx/respect.mp3");
-	this.sounds['kickass'] = new Audio("/sfx/kickass.mp3");
-	this.sounds['sweet'] = new Audio("/sfx/sweet.mp3");
 
 	var speed = 1;
 
@@ -72,7 +68,6 @@ function Cartman(sprite) {
 	}
 
 	this.aButton = function () {
-		alert(this.sounds["respect"]);
 		this.sounds["respect"].play();
 	}
 	this.zButton = function() {
@@ -225,8 +220,8 @@ $(function () {
 
 	$("#div#azButtons button").bind('touchstart', engine.buttondown.bind(engine));
 
-	engine.start();
-
 	window.onorientationchange = engine.updateOrientation.bind(engine);
+
+	engine.start();
 
 });

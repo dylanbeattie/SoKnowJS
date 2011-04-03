@@ -14,7 +14,8 @@ function getMimeTypeFromFilename(filename) {
 	mimeTypes["htm.*"] = "text/html";
 	mimeTypes["css"] = "text/css";
 	mimeTypes["manifest"] = "text/cache-manifest";
-	mimeTypes["mp3"] = " audio/mpeg";
+	mimeTypes["mp3"] = "audio/mpeg";
+	mimeTypes["wav"] = "audio/wav";
 
 	for (var pattern in mimeTypes) {
 		var rx = new RegExp("\." + pattern + "$", "i");
