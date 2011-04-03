@@ -153,7 +153,6 @@ function Simulator(canvas, sprite) {
 
 	this.buttondown = function (e) {
 		var button = $(e.target);
-		alert(button.attr('rel'));
 		switch (button.attr('rel')) {
 			case 'a': this.player.aButton.call(this.player); break;
 			case 'z': this.player.zButton.call(this.player); break;
