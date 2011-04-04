@@ -1,0 +1,33 @@
+<?xml version="1.1" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>TITLE</title>
+<meta name="keywords" content="KEYWORDS" />
+<meta name="description" content="DESCRIPTION" />
+<meta name="copyright" content="Tiram &copy; 2005" />
+<link rel="stylesheet" href="default.css" type="text/css" media="all" title="Default styles" />
+
+</head>
+<body>
+<script type="text/javascript">
+var alerts = [];
+var i, j;
+for(i = 0; i < 3; i++) {
+//	(function(i) {
+		alerts.push(function() {
+			document.write(i + ', ');
+		});
+//	})(i);
+}
+for (j = 0; j < 3; j++) {alerts[j]();
+}
+for (i = 0; i < 3; i++) {
+	alerts[i]();
+}
+</script>
+
+</body>
+</html>
